@@ -69,6 +69,7 @@ export default function Box() {
                 </button>
                 <button className="skilsBtn">
                   <p className="skilsp">{x.tools[1]}</p>
+                  
                 </button>
               </div>
             </div>
