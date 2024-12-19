@@ -11,10 +11,36 @@
 // export const  {create}= skilsSlice.actions
 // export default skilsSlice.reducer
 
+// import { createSlice } from '@reduxjs/toolkit';
+
+// const initialState = {
+//   selectedSkill: null,
+//   persons: [], // داده‌های اشخاص به‌صورت آرایه‌ای از اشیاء
+// };
+
+// const skillsSlice = createSlice({
+//   name: 'skills',
+//   initialState,
+//   reducers: {
+//     selectSkill(state, action) {
+//       state.selectedSkill = action.payload;
+//     },
+//     clearSkill(state) {
+//       state.selectedSkill = null;
+//     },
+//     setPersons(state, action) {
+//       state.persons = action.payload;
+//     },
+//   },
+// });
+
+// export const { selectSkill, clearSkill, setPersons } = skillsSlice.actions;
+// export default skillsSlice.reducer;
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  selectedSkill: null,
+  selectedSkills: [], // لیستی از اسکیل‌های انتخاب‌شده
   persons: [], // داده‌های اشخاص به‌صورت آرایه‌ای از اشیاء
 };
 
@@ -22,11 +48,16 @@ const skillsSlice = createSlice({
   name: 'skills',
   initialState,
   reducers: {
-    selectSkill(state, action) {
-      state.selectedSkill = action.payload;
+    addSkill(state, action) {
+      if (!state.selectedSkills.includes(action.payload)) {
+        state.selectedSkills.push(action.payload);
+      }
     },
-    clearSkill(state) {
-      state.selectedSkill = null;
+    removeSkill(state, action) {
+      state.selectedSkills = state.selectedSkills.filter(skill => skill !== action.payload);
+    },
+    clearSkills(state) {
+      state.selectedSkills = [];
     },
     setPersons(state, action) {
       state.persons = action.payload;
@@ -34,5 +65,5 @@ const skillsSlice = createSlice({
   },
 });
 
-export const { selectSkill, clearSkill, setPersons } = skillsSlice.actions;
+export const { addSkill, removeSkill, clearSkills, setPersons } = skillsSlice.actions;
 export default skillsSlice.reducer;
