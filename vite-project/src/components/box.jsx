@@ -192,7 +192,7 @@ export default function Box() {
   return (
     <>
       {selectedSkills.length > 0 && (
-        <div className="skill-box bg-slate-800 ">
+        <div className="skill-box  flex-wrap">
           <button className="deletbtn" onClick={handleClearClick}>
             Clear
           </button>
@@ -246,7 +246,7 @@ export default function Box() {
           .map((x, i) => (
             <div
               key={i}
-              className=" ml-auto mr-auto flex flex-wrap	w-9/12 h-80  bg-white sm:bg-orange-300"
+              className=" whiteBox rounded-lg shadow-md border-l-8  ml-auto mr-auto flex flex-wrap	w-9/12 h-80  bg-white sm:bg-orange-300"
             >
               <div className=" relative bottom-10 left-6 mb-0 ">
                 <img src={x.logo} alt="" />
@@ -268,9 +268,11 @@ export default function Box() {
                     </button>
                   </div>
                 </div>
-                <div className=" bg-white relative right-14 mt-3 ">
-                  <div className="positionStyle">
-                    <p>{x.position}</p>
+                <div
+                  className="relative right-14 mt-3 "
+                >
+                  <div className="positionStyle sm:text-black ">
+                    <p className=" ">{x.position}</p>
                   </div>
                   <div className="boxthreep mt-8">
                     <p>{x.postedAt}</p>
@@ -278,21 +280,21 @@ export default function Box() {
                     <p>{x.location}</p>
                   </div>
                 </div>
-                <hr className="m-5 w-4/5 border-2 "/>
+                <hr className="m-5 w-4/5 border-2 " />
               </div>
 
               {/*  */}
 
               {/*  */}
-              <div className="rightBax flex   ml-8 mr-20 mb-8 flex-wrap">
+              <div className="rightBax flex   ml-8 mr-20 mb-8 flex-wrap ">
                 <button
-                  className="skilsBtn "
+                  className="skilsBtn rounded"
                   onClick={() => handleSkillClick(x.role)}
                 >
                   <p className="skilsp p-1">{x.role}</p>
                 </button>
                 <button
-                  className="skilsBtn"
+                  className="skilsBtn  rounded"
                   onClick={() => handleSkillClick(x.level)}
                 >
                   <p className="skilsp p-1">{x.level}</p>
@@ -300,7 +302,7 @@ export default function Box() {
                 {x.languages.map((lang, idx) => (
                   <button
                     key={idx}
-                    className="skilsBtn p-1"
+                    className="skilsBtn  rounded"
                     onClick={() => handleSkillClick(lang)}
                   >
                     <p className="skilsp p-1">{lang}</p>
@@ -309,10 +311,10 @@ export default function Box() {
                 {x.tools.map((tool, idx) => (
                   <button
                     key={idx}
-                    className="skilsBtn p-1"
+                    className="skilsBtn  rounded"
                     onClick={() => handleSkillClick(tool)}
                   >
-                    <p className="skilsp">{tool}</p>
+                    <p className="skilsp p-1">{tool}</p>
                   </button>
                 ))}
               </div>

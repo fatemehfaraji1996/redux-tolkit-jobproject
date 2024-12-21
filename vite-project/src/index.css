@@ -92,6 +92,7 @@
   margin-top: 5%;
 }
 .positionStyle {
+
   color: hsl(180, 29%, 50%);
   /* margin-top: 0px; */
   font-weight: 700;
@@ -146,7 +147,7 @@
   /* padding: 5px; */
 }
 .skill-box {
-z-index: 2;
+ z-index: 2;
   display: flex;
   flex-direction: row-reverse;
   gap: 5%;
@@ -200,4 +201,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .ppp{
   width: 90%;
+}
+.whiteBox{
+  border-color:hsl(180, 29%, 50%);
 }
