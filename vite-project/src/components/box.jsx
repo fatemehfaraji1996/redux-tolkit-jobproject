@@ -333,14 +333,14 @@ export default function Box() {
         {data.map((x, i) => {
           return (
             <>
-              <div
+              {/* <div
                 key={i}
-                className=" whiteBox BIGBOX w-9/12 h-96  bg-white flex  mt-20 rounded-lg shadow-md border-l-8  sm:h-40"
+                className=" whiteBox BIGBOX w-9/12 h-96 bg-white flex  mt-20 rounded-lg shadow-md border-l-8  sm:h-40"
               >
-                <div className=" inline bg-gray-50 relative bottom-10 left-6 sm:top-10 sm:bottom-0  h-10 ">
+                <div className=" inline bg-gray-300 relative bottom-10 left-6 sm:top-10 sm:bottom-0  h-10 ">
                   <img className=" " src={x.logo} alt="" />
                 </div>
-                <div className=" flex h-10 w-9/12 gap-3 ml-0 bg-slate-500   mt-14 sm:mt-0ml-12 md:mt-0,ml-12  ">
+                <div className=" bg-purple-500 flex h-10 w-9/12 gap-3 ml-0    mt-14 sm:mt-0ml-12 md:mt-0,ml-12  ">
                   <div className="mt-3  sm:mt-">
                     <p className="p-style   ">{x.company}</p>
                   </div>
@@ -353,6 +353,81 @@ export default function Box() {
                     <button className="darkBtn">
                       <p className="newP">FEATURED</p>
                     </button>
+                  </div>
+                </div>
+              </div> */}
+
+              <div
+                key={i}
+                className="whiteBox BIGBOX w-9/12 h-80 bg-white flex flex-col mt-20 rounded-lg shadow-md border-l-8 sm:h-40 sm:"
+              >
+                <div className="relative inline bottom-10 left-6 sm:top-10 sm:bottom-0 h-10 sm:">
+                  <img src={x.logo} alt="" />
+                </div>
+                <div className="bg-slate-500 flex flex-col sm:flex sm:flex-row w-9/12 ml-5 sm:ml-auto sm:mr-auto">
+                  <div className="bg-red-400 flex flex-col sm:flex sm:flex-col  ">
+                    <div className=" bg-purple-500 flex flex-col items-start  gap-3 mt-2 sm:flex sm:items-start ">
+                      <div className="flex gap-3 ml-0">
+                        <p className="p-style">{x.company}</p>
+                        <div className="lightBtnp">
+                          <button className="lightBtn">
+                            <p className="newP">NEW!</p>
+                          </button>
+                        </div>
+                        <div className="darkBtnp">
+                          <button className="darkBtn">
+                            <p className="newP">FEATURED</p>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    {/* end purpel */}
+                    <div className="bg-orange-200 ">
+                      <div className="positionStyle">
+                        <p>{x.position}</p>
+                      </div>
+                      <div className="boxthreep">
+                        <p>{x.postedAt}</p>
+                        <p>{x.contract}</p>
+                        <p>{x.location}</p>
+                      </div>
+                      {/*  */}
+
+                      {/*  */}
+                      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 sm:hidden" />
+                    </div>
+                  </div>
+                  <div className=" bg-green-300 flex flex-wrap gap-3 sm:flex sm:flex-row sm-flex-nowrap sm:ml-40 sm:items-center ">
+                    <button
+                      className="skilsBtn rounded"
+                      onClick={() => handleSkillClick(x.role)}
+                    >
+                      <p className="skilsp p-1">{x.role}</p>
+                    </button>
+                    <button
+                      className="skilsBtn  rounded"
+                      onClick={() => handleSkillClick(x.level)}
+                    >
+                      <p className="skilsp p-1">{x.level}</p>
+                    </button>
+                    {x.languages.map((lang, idx) => (
+                      <button
+                        key={idx}
+                        className="skilsBtn  rounded"
+                        onClick={() => handleSkillClick(lang)}
+                      >
+                        <p className="skilsp p-1">{lang}</p>
+                      </button>
+                    ))}
+                    {x.tools.map((tool, idx) => (
+                      <button
+                        key={idx}
+                        className="skilsBtn  rounded"
+                        onClick={() => handleSkillClick(tool)}
+                      >
+                        <p className="skilsp p-1">{tool}</p>
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>
