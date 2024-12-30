@@ -359,14 +359,15 @@ export default function Box() {
 
               <div
                 key={i}
-                className="whiteBox BIGBOX w-9/12 h-80 bg-white flex flex-col mt-20 rounded-lg shadow-md border-l-8 sm:h-40 sm:"
+                className="whiteBox BIGBOX w-9/12 h-80 bg-white flex flex-col mt-20 rounded-lg shadow-md border-l-8 sm:h-40 sm:pb-5"
               >
-                <div className="relative inline bottom-10 left-6 sm:top-10 sm:bottom-0 h-10 sm:">
+                <div className="relative inline bottom-10 left-6 sm:top-5 sm:bottom-0 h-10 sm:w-20">
                   <img src={x.logo} alt="" />
                 </div>
-                <div className="bg-slate-500 flex flex-col sm:flex sm:flex-row w-9/12 ml-5 sm:ml-auto sm:mr-auto">
-                  <div className="bg-red-400 flex flex-col sm:flex sm:flex-col  ">
-                    <div className=" bg-purple-500 flex flex-col items-start  gap-3 mt-2 sm:flex sm:items-start ">
+                <div className="bg-slate-500 flex flex-col mr-5 ml-5 sm:mt-auto sm:mb-auto sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-0 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0 lg:bg-black
+                 ">
+                  <div className="bg-red-400 flex flex-col sm:flex sm:flex-col sm:pl-14 md:pl-1 ">
+                    <div className=" flex flex-col items-start  gap-3 mt-2 sm:flex sm:items-start   ">
                       <div className="flex gap-3 ml-0">
                         <p className="p-style">{x.company}</p>
                         <div className="lightBtnp">
@@ -382,7 +383,7 @@ export default function Box() {
                       </div>
                     </div>
                     {/* end purpel */}
-                    <div className="bg-orange-200 ">
+                    <div className="">
                       <div className="positionStyle">
                         <p>{x.position}</p>
                       </div>
@@ -397,7 +398,7 @@ export default function Box() {
                       <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 sm:hidden" />
                     </div>
                   </div>
-                  <div className=" bg-green-300 flex flex-wrap gap-3 sm:flex sm:flex-row sm-flex-nowrap sm:ml-40 sm:items-center ">
+                  <div className=" bg-green-300 flex flex-wrap gap-3 sm:flex sm:flex-row   sm:items-center sm:bg-green-800 sm:ml-1  md:flex  md:gap-1 md:flex-row md:w-auto md:ml-auto md:bg-pink-600 md:flex-wrap   lg:bg-yellow-200">
                     <button
                       className="skilsBtn rounded"
                       onClick={() => handleSkillClick(x.role)}
