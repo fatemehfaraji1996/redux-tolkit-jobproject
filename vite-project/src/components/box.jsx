@@ -359,12 +359,12 @@ export default function Box() {
 
               <div
                 key={i}
-                className="whiteBox BIGBOX w-9/12 h-80 bg-white flex flex-col mt-20 rounded-lg shadow-md border-l-8 sm:h-40 sm:pb-5"
+                className="whiteBox BIGBOX w-9/12 h-80 bg-white flex flex-col mt-20 rounded-lg shadow-md border-l-8 sm:h-40 sm:pb-5 sm:w-11/12 "
               >
                 <div className="relative inline bottom-10 left-6 sm:top-10 sm:bottom-0 h-10 sm:w-20">
                   <img src={x.logo} alt="" />
                 </div>
-                <div className=" flex flex-col mr-5 ml-5 sm:mt-auto sm:mb-auto sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-5 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0                   ">
+                <div className=" flex flex-col mr-5 ml-5  sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-5 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0                   ">
                   <div className=" flex flex-col sm:flex sm:flex-col sm:pl-14 md:pl-1 ">
                     <div className=" flex flex-col items-start  gap-3 mt-2 sm:flex sm:items-start   ">
                       <div className="flex gap-3 ml-0">
@@ -397,7 +397,7 @@ export default function Box() {
                       <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 sm:hidden" />
                     </div>
                   </div>
-                  <div className="  flex flex-wrap gap-3 sm:flex sm:flex-row   sm:items-center sm:ml-1  md:flex  md:gap-1 md:flex-row md:w-auto md:ml-auto sm:bg-purple-300 md:bg-purple-300 md:flex-wrap md:pl-0  ">
+                  <div className="  flex flex-wrap gap-3 sm:flex sm:flex-row sm:mt-auto sm:mb-auto sm:box-border  md:flex  md:gap-1 md:flex-row md:w-auto md:ml-auto  md:flex-wrap md:pl-0  ">
                     <button
                       className="skilsBtn rounded"
                       onClick={() => handleSkillClick(x.role)}
