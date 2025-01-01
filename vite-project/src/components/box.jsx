@@ -46,11 +46,11 @@ export default function Box() {
       <div className="bg-blue-100 w-full h-100 ">
         <Header />
       </div>
-      {/* end header */}
 
-      <div className="bg-white w-full py-4 flex flex-wrap gap-3">
+      <div className="w-10/12 py-4 ml-auto mr-auto  flex flex-wrap gap-3 bg-green-300 h-28 items-center p-5">
         {selectedSkills.map((skill, index) => (
-          <div
+          <div className=" ">
+              <div
             key={index}
             className="bg-gray-200 p-2 rounded flex items-center"
           >
@@ -62,10 +62,12 @@ export default function Box() {
               &times;
             </button>
           </div>
+          </div>
+        
         ))}
       </div>
 
-      <div className="bg h-40 w-9/12 bg-green-200 flex flex-col gap-5 items-center  ">
+      <div className=" flex flex-col gap-5 items-center  ">
         {filteredPersons.map((x, i) => {
           return (
             <>
