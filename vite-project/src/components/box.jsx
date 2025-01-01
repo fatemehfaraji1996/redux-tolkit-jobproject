@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "./header";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +8,7 @@ import {
   setPersons,
 } from "../redux/skilsSlice";
 import data from "../Data/data.json";
+
 export default function Box() {
   const dispatch = useDispatch();
   const selectedSkills = useSelector((state) => state.skills.selectedSkills);
@@ -29,10 +29,17 @@ export default function Box() {
     dispatch(removeSkill(skill));
   };
 
-  // هندلر برای کلیر کردن اسکیل‌های انتخاب شده
-  const handleClearClick = () => {
-    dispatch(clearSkills());
-  };
+  // فیلتر کردن اشخاص بر اساس اسکیل‌های انتخاب‌شده
+  const filteredPersons = persons.filter((person) => {
+    return selectedSkills.every((skill) =>
+      [
+        person.role,
+        person.level,
+        ...person.languages,
+        ...person.tools,
+      ].includes(skill)
+    );
+  });
 
   return (
     <>
@@ -41,13 +48,30 @@ export default function Box() {
       </div>
       {/* end header */}
 
-      <div className="bg h-full w-full flex flex-col gap-5 items-center  ">
-        {data.map((x, i) => {
+      <div className="bg-white w-full py-4 flex flex-wrap gap-3">
+        {selectedSkills.map((skill, index) => (
+          <div
+            key={index}
+            className="bg-gray-200 p-2 rounded flex items-center"
+          >
+            <span>{skill}</span>
+            <button
+              className="ml-2 text-red-500"
+              onClick={() => handleSkillRemove(skill)}
+            >
+              &times;
+            </button>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg h-40 w-9/12 bg-green-200 flex flex-col gap-5 items-center  ">
+        {filteredPersons.map((x, i) => {
           return (
             <>
               <div
                 key={i}
-                className="whiteBox BIGBOX w-9/12 h-80 bg-white flex flex-col mt-20 rounded-lg shadow-md border-l-8 sm:h-40 sm:pb-5 sm:w-11/12 "
+                className="whiteBox BIGBOX w-12/12 mr-auto ml-auto h-80 bg-white flex flex-col mt-20 rounded-lg shadow-md border-l-8 sm:h-40 sm:pb-5 sm:w-11/12 "
               >
                 <div className="relative inline bottom-10 left-6 sm:top-10 sm:bottom-0 h-10 sm:w-20">
                   <img src={x.logo} alt="" />
@@ -79,8 +103,8 @@ export default function Box() {
                         <p>{x.contract}</p>
                         <p>{x.location}</p>
                       </div>
-      
-                      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 sm:hidden" />
+
+                      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 sm:hidden" />
                     </div>
                   </div>
                   <div className="  flex flex-wrap gap-3 sm:flex sm:flex-row sm:mt-auto sm:mb-auto sm:box-border  md:flex  md:gap-1 md:flex-row md:w-auto md:ml-auto  md:flex-wrap md:pl-0  ">
