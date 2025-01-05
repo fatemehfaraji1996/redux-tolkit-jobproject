@@ -50,7 +50,7 @@ export default function Box() {
             <div key={index} className="bg-gray-200 p-2 rounded flex items-center">
               <span>{skill}</span>
               <button
-                className="ml-2 text-red-500"
+                className="ml-2 text-red-100"
                 onClick={() => handleSkillRemove(skill)}
               >
                 &times;
