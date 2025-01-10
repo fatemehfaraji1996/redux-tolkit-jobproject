@@ -39,13 +39,15 @@ export default function Box() {
 
   return ( 
     <> 
-      <div className="bg-blue-100 w-full h-100 "> 
+      <div className="pic-header w-full h-100 "> 
         <Header /> 
       </div> 
       {/* end header */}
       
+
+      <div className=" mt-0  bg h-full w-full flex flex-col gap-5 items-center  "> 
       {selectedSkills.length > 0 && ( // این بخش فقط زمانی نمایش داده می‌شود که اسکیل انتخاب شده باشد
-        <div className="bg-green-900 w-10/12 mr-auto ml-auto py-4 flex flex-wrap gap-3">
+        <div className=" bg-white p-4 shadow rounded-md w-10/12 mr-auto ml-auto py-4 mt-0 flex flex-wrap gap-3">
           {selectedSkills.map((skill, index) => (
             <div key={index} className="bg-gray-200 p-2 rounded flex items-center">
               <span>{skill}</span>
@@ -60,13 +62,17 @@ export default function Box() {
         </div>
       )}
 
-      <div className="bg h-full w-full flex flex-col gap-5 items-center  "> 
+
+
+
+
+
         {filteredPersons.map((x, i) => { 
           return ( 
             <> 
               <div 
                 key={i} 
-                className="whiteBox BIGBOX w-9/12 h-80 bg-white flex flex-col mt-20 rounded-lg shadow-md border-l-8 sm:h-40 sm:pb-5 sm:w-11/12 " 
+                className="whiteBox BIGBOX  w-9/12 h-80 bg-white flex flex-col mt-20 rounded-lg shadow-md border-l-8 sm:h-40 sm:pb-5 sm:w-11/12 " 
               > 
                 <div className="relative inline bottom-10 left-6 sm:top-10 sm:bottom-0 h-10 sm:w-20"> 
                   <img src={x.logo} alt="" /> 

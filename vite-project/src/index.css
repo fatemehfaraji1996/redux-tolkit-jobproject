@@ -63,6 +63,9 @@
   color: hsl(180, 29%, 50%);
   margin-top: 5%;
 }
+.pic-header{
+  background: hsl(180, 29%, 50%);
+}
 .lightBtn {
   /* margin-top: -90px; */
   background: hsl(180, 29%, 50%);
@@ -162,7 +165,7 @@ bottom: 15px;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   /* margin-bottom: 10px; */
 }
-.skill-box-btn {
+.skill-box{
   /* background: #e0f1f3; */
   /* margin-left: 275px; */
   height: 40px;
