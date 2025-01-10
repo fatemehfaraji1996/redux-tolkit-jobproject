@@ -45,7 +45,7 @@ export default function Box() {
       {/* end header */}
       
       {selectedSkills.length > 0 && ( // این بخش فقط زمانی نمایش داده می‌شود که اسکیل انتخاب شده باشد
-        <div className="bg-green-100 w-10/12 mr-auto ml-auto py-4 flex flex-wrap gap-3">
+        <div className="bg-green-900 w-10/12 mr-auto ml-auto py-4 flex flex-wrap gap-3">
           {selectedSkills.map((skill, index) => (
             <div key={index} className="bg-gray-200 p-2 rounded flex items-center">
               <span>{skill}</span>
