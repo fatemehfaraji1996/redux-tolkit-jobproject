@@ -215,3 +215,9 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   /* background: hsl(180, 60%, 81%); */
   background: hsl(180, 52%, 88%);
 }
+.bg-btn{
+  background: hsl(180, 52%, 88%);
+}
+.bg-remove{
+  background-color: hsl(180, 29%, 50%);
+}

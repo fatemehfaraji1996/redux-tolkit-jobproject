@@ -49,10 +49,10 @@ export default function Box() {
       {selectedSkills.length > 0 && ( // این بخش فقط زمانی نمایش داده می‌شود که اسکیل انتخاب شده باشد
         <div className=" bg-white p-4 shadow rounded-md w-10/12 mr-auto ml-auto py-4 mt-0 flex flex-wrap gap-3">
           {selectedSkills.map((skill, index) => (
-            <div key={index} className="bg-gray-200 p-2 rounded flex items-center">
+            <div key={index} className="bg-btn  h-10 pl-2 rounded flex items-center">
               <span>{skill}</span>
               <button
-                className="ml-2  text-red-300 bg-green-100"
+                className="ml-2 h-10 w-6 bg-remove rounded text-red-300 bg-green-100"
                 onClick={() => handleSkillRemove(skill)}
               >
                 &times;
