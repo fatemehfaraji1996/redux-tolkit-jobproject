@@ -9,6 +9,8 @@ import {
   setPersons,
 } from "../redux/skilsSlice";
 import data from "../Data/data.json";
+import SelectSkillsBox from "./selectSkillsBox";
+import Persens from "./persens";
 
 export default function Box() {
   const dispatch = useDispatch(); // برای فراخوانی اکشن‌ها از dispatch استفاده می‌شود
@@ -21,17 +23,9 @@ export default function Box() {
   }, [dispatch]);
 
   // هندلر برای اضافه کردن اسکیل
-  const handleSkillClick = (skill) => {
-    dispatch(addSkill(skill)); // اسکیل انتخاب‌شده را به استیت Redux اضافه می‌کند
-  };
-
-  // هندلر برای حذف اسکیل
-  const handleSkillRemove = (skill) => {
-    dispatch(removeSkill(skill)); // اسکیل انتخاب‌شده را از استیت Redux حذف می‌کند
-  };
-  const handleSkillClear =(skill)=>{
-dispatch(clearSkills(skill))
-  }
+  // const handleSkillClick = (skill) => {
+  //   dispatch(addSkill(skill)); // اسکیل انتخاب‌شده را به استیت Redux اضافه می‌کند
+  // };
 
   // فیلتر کردن اشخاص بر اساس اسکیل‌های انتخاب‌شده
   const filteredPersons = persons.filter((person) => {
@@ -45,7 +39,6 @@ dispatch(clearSkills(skill))
     ); // اشخاصی که تمام اسکیل‌های انتخاب‌شده را دارند، فیلتر می‌کند
   });
 
-
   return (
     <>
       <div className="pic-header w-full h-100 ">
@@ -54,29 +47,7 @@ dispatch(clearSkills(skill))
       {/* end header */}
 
       <div className=" mt-0  bg h-full w-full flex flex-col gap-5 items-center  ">
-        {selectedSkills.length > 0 && ( // این بخش فقط زمانی نمایش داده می‌شود که اسکیل انتخاب شده باشد
-          <div className=" bg-white p-4 shadow rounded-md w-10/12 mr-auto ml-auto py-4 mt-0 flex flex-wrap gap-3">
-            {selectedSkills.map((skill, index) => (
-              <div>
-                <div
-                  key={index}
-                  className="bg-btn  h-10 pl-2 rounded flex items-center"
-                >
-                  <span>{skill}</span>
-                  <button
-                    className="ml-2 h-10 w-6 bg-remove rounded text-white bg-green-100"
-                    onClick={() => handleSkillRemove(skill)}
-                  >
-                    &times;
-                  </button>
-                </div>
-              </div>
-            ))}
-            <div className="ml-auto ">
-              <button onClick={()=>handleSkillClear()} className="shadow mr-auto p-1">Close</button>
-            </div>
-          </div>
-        )}
+        <SelectSkillsBox />
 
         {filteredPersons.map((x, i) => {
           return (
@@ -88,7 +59,7 @@ dispatch(clearSkills(skill))
                 <div className="relative inline bottom-10 left-6 sm:top-10 sm:bottom-0 h-10 sm:w-20">
                   <img src={x.logo} alt="" />
                 </div>
-                <div className=" flex flex-col mr-5 ml-5  sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-5 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0">
+                {/* <div className=" bg-green-400 flex flex-col mr-5 ml-5  sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-5 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0">
                   <div className=" flex flex-col sm:flex sm:flex-col sm:pl-14 md:pl-1 ">
                     <div className=" flex flex-col items-start  gap-3 mt-2 sm:flex sm:items-start   ">
                       <div className="flex gap-3 ml-0">
@@ -105,7 +76,7 @@ dispatch(clearSkills(skill))
                         </div>
                       </div>
                     </div>
-                    {/* end purpel */}
+           
                     <div className="">
                       <div className="positionStyle">
                         <p>{x.position}</p>
@@ -152,6 +123,9 @@ dispatch(clearSkills(skill))
                     ))}
                   </div>
                 </div>
+ */}
+
+<Persens x={x} />
               </div>
             </>
           );
