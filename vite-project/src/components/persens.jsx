@@ -32,6 +32,8 @@ export default function ({x}) {
             <p>{x.position}</p>
           </div>
           <div className="boxthreep">
+
+            
             <p>{x.postedAt}</p>
             <p>{x.contract}</p>
             <p>{x.location}</p>
