@@ -1,12 +1,26 @@
 import React from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 export default function ({x}) {
-
+  const persons = useSelector((state) => state.skills.persons); // اشخاص را از استیت Redux می‌گیرد
     const dispatch = useDispatch(); // برای فراخوانی اکشن‌ها از dispatch استفاده می‌شود
+
+ const selectedSkills = useSelector((state) => state.skills.selectedSkills); // اسکیل‌های انتخاب‌شده را از استیت Redux می‌گیرد
+
   const handleSkillClick = (skill) => {
     dispatch(addSkill(skill)); // اسکیل انتخاب‌شده را به استیت Redux اضافه می‌کند
   };
 
+  const filteredPersons = persons.filter((person) => {
+    return selectedSkills.every((skill) =>
+      [
+        person.role,
+        person.level,
+        ...person.languages,
+        ...person.tools,
+      ].includes(skill)
+    ); // اشخاصی که تمام اسکیل‌های انتخاب‌شده را دارند، فیلتر می‌کند
+  });
 
   return (
     <div className=" flex flex-col mr-5 ml-5  sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-5 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0">
@@ -32,8 +46,6 @@ export default function ({x}) {
             <p>{x.position}</p>
           </div>
           <div className="boxthreep">
-
-            
             <p>{x.postedAt}</p>
             <p>{x.contract}</p>
             <p>{x.location}</p>

@@ -22,10 +22,10 @@ export default function Box() {
     dispatch(setPersons(data)); // داده‌های اشخاص را به استیت Redux اضافه می‌کند
   }, [dispatch]);
 
-  // هندلر برای اضافه کردن اسکیل
-  // const handleSkillClick = (skill) => {
-  //   dispatch(addSkill(skill)); // اسکیل انتخاب‌شده را به استیت Redux اضافه می‌کند
-  // };
+ 
+  const handleSkillClick = (skill) => {
+    dispatch(addSkill(skill)); // اسکیل انتخاب‌شده را به استیت Redux اضافه می‌کند
+  };
 
   // فیلتر کردن اشخاص بر اساس اسکیل‌های انتخاب‌شده
   const filteredPersons = persons.filter((person) => {
@@ -59,7 +59,7 @@ export default function Box() {
                 <div className="relative inline bottom-10 left-6 sm:top-10 sm:bottom-0 h-10 sm:w-20">
                   <img src={x.logo} alt="" />
                 </div>
-                {/* <div className=" bg-green-400 flex flex-col mr-5 ml-5  sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-5 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0">
+                <div className=" flex flex-col mr-5 ml-5  sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-5 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0">
                   <div className=" flex flex-col sm:flex sm:flex-col sm:pl-14 md:pl-1 ">
                     <div className=" flex flex-col items-start  gap-3 mt-2 sm:flex sm:items-start   ">
                       <div className="flex gap-3 ml-0">
@@ -123,9 +123,9 @@ export default function Box() {
                     ))}
                   </div>
                 </div>
- */}
 
-<Persens x={x} />
+
+
               </div>
             </>
           );

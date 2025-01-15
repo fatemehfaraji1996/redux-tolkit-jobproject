@@ -6,6 +6,7 @@ import {
     clearSkills,
    
   } from "../redux/skilsSlice";
+import Persens from "./persens";
  
 export default function () {
     
@@ -62,6 +63,8 @@ export default function () {
           </div>
         </div>
       )}
+
+
     </div>
   );
 }
