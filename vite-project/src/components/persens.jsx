@@ -9,7 +9,7 @@ export default function ({x}) {
 
 
   return (
-    <div className=" bg-green-400 flex flex-col mr-5 ml-5  sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-5 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0">
+    <div className=" flex flex-col mr-5 ml-5  sm:w-auto sm-h-40 sm:mr-5 sm:flex sm:flex-row sm:gap-5 sm:h-40  sm:ml-14 md:w-10/12 md:gap-0 md:ml-20 md:flex md:flex-row md:pl-16  md:mt-0">
       <div className=" flex flex-col sm:flex sm:flex-col sm:pl-14 md:pl-1 ">
         <div className=" flex flex-col items-start  gap-3 mt-2 sm:flex sm:items-start   ">
           <div className="flex gap-3 ml-0">
